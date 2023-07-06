@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package myservice;
+
+option go_package="github.com/megaspark12/demo-grpc-service/service";
+
+message Request {
+  string message = 1;
+}
+
+message Response {
+  string reply = 1;
+}
+
+service MyService {
+  rpc SendMessage(Request) returns (Response);
+}
